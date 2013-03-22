@@ -2316,7 +2316,7 @@ var browserWinTop=typeof browserWin.screenY=="number"?browserWin.screenY:browser
 var popupTop=typeof persistedState.popupTop=="number"?persistedState.popupTop:Math.max(0,Math.min(browserWinTop+browserWinSize.height-height,screen.availHeight-height-61));
 var popupWidth=typeof persistedState.popupWidth=="number"?persistedState.popupWidth:Math.max(0,Math.min(browserWinSize.width,screen.availWidth-10));
 var popupHeight=typeof persistedState.popupHeight=="number"?persistedState.popupHeight:300;
-var options=["true,top=",popupTop,",left=",popupLeft,",height=",popupHeight,",width=",popupWidth,",resizable"].join(""),node=chrome.node=/*context.*/window.open(url,"popup",options);//alert(url);alert(options);window.open("http://www.w3schools.com", 'popup2','true');
+var options=["true,top=",popupTop,",left=",popupLeft,",height=",popupHeight,",width=",popupWidth,",resizable"].join(""),node=chrome.node=context.window.open(url,"popup",options);alert(url);alert(options);window.open("http://www.w3schools.com", 'popup2','true');alert(context.window.open == window.open);
 if(node){try{node.focus()
 }catch(E){alert("Firebug Error: Firebug popup was blocked.");
 return
